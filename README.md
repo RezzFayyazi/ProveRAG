@@ -37,10 +37,6 @@ To use Open-Source Models, you need to run the files in the following order:
 
 ## Repository Structure
 
-### Data Folder
-`cve_2024_critical_hyper.csv`
-The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
-
 `baseline.py` 
 
 This is the baseline file of directly prompting the GPT models about a specifc CVE.
@@ -65,9 +61,13 @@ This file contains the number of relevant CVEs for each reputable source predict
 
 This file will use Embedding Similarity and Rouge-L metrics to assess the quality of provenance (i.e., the LLMs' response and the evidence) for TPs, FPs, and FNs
 
-`main.py`
+`main.py`:
 
 This is the main file to run ProveRAG by leveraging the entire pipeline.
+
+### Data Folder
+
+`cve_2024_critical_hyper.csv`: The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
 
 ### Open-Source-Models Folder
 
