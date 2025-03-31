@@ -1,7 +1,5 @@
 # ProveRAG
-ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs
-
-[arxiv](https://arxiv.org/abs/2410.17406)  
+ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs [[arxiv](https://arxiv.org/abs/2410.17406)]  
 
 ## Overview
 
