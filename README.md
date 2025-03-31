@@ -10,50 +10,13 @@ This repo offers ProveRAG, an LLM-powered framework that emulates an analyst’s
 
 ## Setup
 Create a virtual environment and install the libraries:
-```python
-pyhton -m venv .venv
-.venv\Scripts\activate
+
+```sh
+python -m venv .venv
+source .venv/bin/activate  # On macOS/Linux
+.venv\Scripts\activate  # On Windows
 pip install -r requirements.txt
 ```
-
-## Repository Structure
-
-### Data Folder
-**cve_2024_critical_hyper.csv**
-   - **Description**: The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
-
-### baseline.py 
-
-This is the baseline file of directly prompting the GPT models about a specifc CVE.
-
-### generation.py
-
-This file represents the Generation Module of the proposed ProveRAG framework. The Retr. LLM will summarize the content of the sources with respect to the exploitaion/mitigation information and then will pass it to the Gen. LLM to provide the response. 
-
-### evaluation.py 
-
-This file represents the Evaluation Module of the proposed ProveRAG framework. The Eval. LLM will self-critique its response with verifiable sources be predicting a value (TP/FP/FN), rationale for the selected value, and provenance by showing pieces of text where it got the information (or where it hallucinated or omitted information). 
-
-### classification_performance.py 
-
-This file represents the predicted number of TPs, FPs, and FNs for a selected model for ProveRAG.
-
-### relevancy_count.py
-
-This file contains the number of relevant CVEs for each reputable source predicted by the LLM (shown in Table 2 of the paper).
-
-### provenance_quality.py
-
-This file will use Embedding Similarity and Rouge-L metrics to assess the quality of provenance (i.e., the LLMs' response and the evidence) for TPs, FPs, and FNs
-
-### main.py
-
-This is the main file to run ProveRAG by leveraging the entire pipeline.
-
-### Open Source Models Folder
-
-This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The "ollama_relevacncy.py" will summarize the content retrieved from web data, the "ollama_generation.py" will generate the response for mitigation/exploitation information after postprocessing of the summaries (postprocess is just to keeping those summaries that LLM found relevant for a specific CVE), and the "Ollama_provenance.py" is the evaluation part to provide value, rationale, and provenance attributes. Finally, "Ollama_responses_direct_prompting.py" is to use an open-source model and directly querying it for a specific CVE.
-
 
 ## How to Run
 
@@ -67,7 +30,49 @@ Run the "main.py" file by passing the following arguments (you can change to any
 
 ```
 
+
+## Repository Structure
+
+### Data Folder
+`cve_2024_critical_hyper.csv`
+   - **Description**: The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
+
+`baseline.py` 
+
+This is the baseline file of directly prompting the GPT models about a specifc CVE.
+
+`generation.py`
+
+This file represents the Generation Module of the proposed ProveRAG framework. The Retr. LLM will summarize the content of the sources with respect to the exploitaion/mitigation information and then will pass it to the Gen. LLM to provide the response. 
+
+`evaluation.py` 
+
+This file represents the Evaluation Module of the proposed ProveRAG framework. The Eval. LLM will self-critique its response with verifiable sources be predicting a value (TP/FP/FN), rationale for the selected value, and provenance by showing pieces of text where it got the information (or where it hallucinated or omitted information). 
+
+`classification_performance.py` 
+
+This file represents the predicted number of TPs, FPs, and FNs for a selected model for ProveRAG.
+
+`relevancy_count.py`
+
+This file contains the number of relevant CVEs for each reputable source predicted by the LLM (shown in Table 2 of the paper).
+
+`provenance_quality.py`
+
+This file will use Embedding Similarity and Rouge-L metrics to assess the quality of provenance (i.e., the LLMs' response and the evidence) for TPs, FPs, and FNs
+
+`main.py`
+
+This is the main file to run ProveRAG by leveraging the entire pipeline.
+
+### Open Source Models Folder
+
+This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The `ollama_relevacncy.py` will summarize the content retrieved from web data, the `ollama_generation.py` will generate the response for mitigation/exploitation information after postprocessing of the summaries (postprocess is just to keeping those summaries that LLM found relevant for a specific CVE), and the `Ollama_provenance.py` is the evaluation part to provide value, rationale, and provenance attributes. Finally, `Ollama_responses_direct_prompting.py` is to use an open-source model and directly querying it for a specific CVE.
+
+
 ## Citation
+
+If you use ProveRAG in your research, please cite:
 
 ```bibtex
 @article{fayyazi2024proverag,
