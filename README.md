@@ -1,5 +1,6 @@
 # ProveRAG
 ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs
+
 [arxiv](https://arxiv.org/abs/2410.17406)  
 
 ## Overview
@@ -35,7 +36,7 @@ Run the "main.py" file by passing the following arguments (you can change to any
 
 ### Data Folder
 `cve_2024_critical_hyper.csv`
-   - **Description**: The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
+The curated dataset of CVEs in 2024 with critical vunlerability (up until July 25)
 
 `baseline.py` 
 
@@ -67,7 +68,7 @@ This is the main file to run ProveRAG by leveraging the entire pipeline.
 
 ### Open Source Models Folder
 
-This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The `ollama_relevacncy.py` will summarize the content retrieved from web data, the `ollama_generation.py` will generate the response for mitigation/exploitation information after postprocessing of the summaries (postprocess is just to keeping those summaries that LLM found relevant for a specific CVE), and the `Ollama_provenance.py` is the evaluation part to provide value, rationale, and provenance attributes. Finally, `Ollama_responses_direct_prompting.py` is to use an open-source model and directly querying it for a specific CVE.
+This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The `Ollama_relevancy.py` script summarizes the content retrieved from web data, the `Ollama_generation.py` script generates responses for mitigation/exploitation information after postprocessing the summaries (where postprocessing involves keeping only those summaries that the LLM finds relevant for a specific CVE), and the `Ollama_provenance.py` script evaluates the responses by providing value, rationale, and provenance attributes. Finally, the `Ollama_responses_direct_prompting.py` script is used to query an open-source model directly for a specific CVE.
 
 
 ## Citation
