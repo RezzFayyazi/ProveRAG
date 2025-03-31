@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ## How to Run
 
-Run the "main.py" file by passing the following arguments (you can change to any OpenAI models):
+Run the `main.py` file by passing the following arguments (you can select any OpenAI models here):
 ```python
  api_key = "YOUR_API_KEY"  # Replace with your OpenAI API key
  model_name = "gpt-4o-mini"
@@ -31,6 +31,11 @@ Run the "main.py" file by passing the following arguments (you can change to any
 
 ```
 
+To use Open-Source Models, you need to run the files in the following order:
+
+ `Ollama_relevancy.py  -> Ollama_generation.py -> Ollama_provenance.py`
+
+Important Note: Some post-processing may be required before running these scripts to ensure the data is in the correct format. This is especially important if the LLM you're using does not support function calling. You might need to manually adjust the data or implement additional code to prepare it for these scripts.
 
 ## Repository Structure
 
