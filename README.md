@@ -33,7 +33,7 @@ To use Open-Source Models, you need to run the files in the following order:
 
  `Ollama_relevancy.py  -> Ollama_generation.py -> Ollama_provenance.py`
 
-Important Note: Some post-processing may be required before running these scripts to ensure the data is in the correct format. This is especially important if the LLM you're using does not support function calling. You might need to manually adjust the data or implement additional code to prepare it for these scripts.
+**Important Note**: Some post-processing may be required before running these scripts to ensure the data is in the correct format. This is especially important if the LLM you're using does not support function calling. You might need to manually adjust the data or implement additional code to prepare it for these scripts.
 
 ## Repository Structure
 
@@ -69,7 +69,7 @@ This file will use Embedding Similarity and Rouge-L metrics to assess the qualit
 
 This is the main file to run ProveRAG by leveraging the entire pipeline.
 
-### Open Source Models Folder
+### Open-Source-Models Folder
 
 This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The `Ollama_relevancy.py` script summarizes the content retrieved from web data, the `Ollama_generation.py` script generates responses for mitigation/exploitation information after postprocessing the summaries (where postprocessing involves keeping only those summaries that the LLM finds relevant for a specific CVE), and the `Ollama_provenance.py` script evaluates the responses by providing value, rationale, and provenance attributes. Finally, the `Ollama_responses_direct_prompting.py` script is used to query an open-source model directly for a specific CVE.
 
