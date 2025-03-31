@@ -1,5 +1,5 @@
 # ProveRAG
-ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs [[arxiv](https://arxiv.org/abs/2410.17406)]  
+ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs
 
 ## Overview
 
@@ -73,15 +73,3 @@ This is the main file to run ProveRAG by leveraging the entire pipeline.
 
 This folder contains the code for leveraging ProveRAG with open-source LLMs using Ollama. The `Ollama_relevancy.py` script summarizes the content retrieved from web data, the `Ollama_generation.py` script generates responses for mitigation/exploitation information after postprocessing the summaries (where postprocessing involves keeping only those summaries that the LLM finds relevant for a specific CVE), and the `Ollama_provenance.py` script evaluates the responses by providing value, rationale, and provenance attributes. Finally, the `Ollama_responses_direct_prompting.py` script is used to query an open-source model directly for a specific CVE.
 
-
-## Citation
-
-If you use ProveRAG in your research, please cite:
-
-```bibtex
-@article{fayyazi2024proverag,
-  title={ProveRAG: Provenance-Driven Vulnerability Analysis with Automated Retrieval-Augmented LLMs},
-  author={Fayyazi, Reza and Trueba, Stella Hoyos and Zuzak, Michael and Yang, Shanchieh Jay},
-  journal={arXiv preprint arXiv:2410.17406},
-  year={2024}
-}
