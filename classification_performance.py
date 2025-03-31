@@ -47,7 +47,7 @@ def main():
     current_dir = os.getcwd()
     print(f"Current working directory: {current_dir}")
 
-    filepath = './results/evals_autosum_no_hyper_summary_gpt-4o-mini_new_provenance_marginal.json'
+    filepath = './results/final_evals_final_evals_ProveRAG_mitigation_gpt-4o-mini.json'
 
     data = load_evaluation_data(filepath)
     if not data:
