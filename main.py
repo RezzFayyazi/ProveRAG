@@ -10,8 +10,10 @@ if __name__ == "__main__":
     mode = "ProveRAG"  # or "ProveRAG-Aqua"
     
     # GENERATION MODULE
+    #---------------------------------------------------
     # If you only want to test the provenance part, you can comment the generation part and only give the path of the generation results to the evaluation module
     path_to_exploitation_relevancy, path_to_mitigation_relevancy, path_to_generation_results =  generation_main(api_key, model_name, data_path, mode)
+    #---------------------------------------------------
 
 
     # EVALUATION MODULE
